@@ -1,0 +1,57 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+  <div class="container mt-4">
+    <!-- Header Section -->
+    <div class="text-center">
+      <h2 class="fw-bold">Contact Us</h2>
+      <p class="text-muted">We're here to help you through every step of your admission journey.</p>
+    </div>
+
+    <!-- Contact Info Cards -->
+    <div class="row mt-5">
+      <div class="col-md-4">
+        <div class="card p-3 shadow-sm text-center">
+          <i class="fas fa-phone fa-2x mb-2"></i>
+          <h5>Call Us</h5>
+          <p class="mb-0">+91 98765 43210</p>
+          <p class="text-muted">Mon - Fri | 10AM - 6PM</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 shadow-sm text-center">
+          <i class="fas fa-envelope fa-2x mb-2"></i>
+          <h5>Email</h5>
+          <p class="mb-0">support@collegeguide.in</p>
+          <p class="text-muted">We reply within 24 hours</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 shadow-sm text-center">
+          <i class="fas fa-map-marker-alt fa-2x mb-2"></i>
+          <h5>Visit Us</h5>
+          <p class="mb-0">123, Edu Lane, Knowledge City, India</p>
+          <p class="text-muted">Open Mon - Sat</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="mt-5">
+      <h4 class="fw-bold text-center">Send us a Message</h4>
+      <form class="mt-4 w-75 mx-auto">
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="Your Name" required>
+        </div>
+        <div class="mb-3">
+          <input type="email" class="form-control" placeholder="Your Email" required>
+        </div>
+        <div class="mb-3">
+          <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-dark px-4">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>

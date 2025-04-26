@@ -1,0 +1,141 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<head>
+  <style>
+    .list-img {
+      width: 100%;
+      height: 16rem;
+      object-fit: cover;
+      border-radius: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      border: none;
+      border-radius: 1.25rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+    }
+
+    .card:hover .list-img {
+      transform: scale(1.03);
+    }
+
+    .card-body {
+      padding: 1.25rem 1rem;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-text {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 0.3rem;
+    }
+
+    .btn-dark {
+      border-radius: 10px;
+    }
+
+    .add-btn-container {
+      text-align: right;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .text-decoration-none {
+      text-decoration: none !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="text-center">
+    <h1 class="fw-bold">Explore your Dream</h1>
+    <!-- <div class="search-bar d-flex justify-content-center mt-3">
+      <input type="text" class="form-control w-50" placeholder="Explore colleges...">
+      <button class="btn btn-outline-secondary ms-2">
+        <i class="fas fa-search"></i>
+      </button>
+    </div> -->
+
+    <div class="search-bar d-flex justify-content-center mt-3">
+      <form method="GET" action="/listings/search" class="d-flex w-50">
+        <input
+          type="text"
+          name="query"
+          class="form-control"
+          placeholder="Explore colleges..."
+        />
+        <button class="btn btn-outline-secondary ms-2" type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+   <!-- Navigation Buttons -->
+   <div class="row mt-4 d-flex justify-content-center">
+    <div class="col-md-2 col-sm-3 col-6 text-center">
+      <a href="/listings" class="btn btn-dark w-100 py-2">Colleges</a>
+    </div>
+    <div class="col-md-2 col-sm-3 col-6 text-center">
+      <a href="/listings/notification" class="btn btn-dark w-100 py-2">
+        Notifications <span class="badge bg-danger ms-1">1</span>
+      </a>
+    </div>
+    
+    <div class="col-md-2 col-sm-3 col-6 text-center">
+      <a href="/listings/admission" class="btn btn-dark w-100 py-2">Admission</a>
+    </div>
+    <div class="col-md-2 col-sm-3 col-6 text-center">
+      <a href="/listings/contact" class="btn btn-dark w-100 py-2">Contact</a>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="add-btn-container">
+      <form method="GET" action="/listings/new">
+        <button class="btn btn-dark px-4 py-2">Add New College</button>
+      </form>
+    </div>
+
+    
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <% allListings.forEach(listing => { %>
+        <div class="col d-flex">
+          <a href="/listings/<%= listing._id %>" class="text-decoration-none w-100">
+            <div class="card h-100">
+              <% if (listing.image.length > 0) { %>
+                <img src="<%= listing.image[0] %>" alt="College Image" class="list-img" />
+              <% } else { %>
+                <img src="/images/default-college.jpg" alt="Default College" class="list-img" />
+              <% } %>
+
+              <div class="card-body text-start">
+                <h5 class="card-title"><%= listing.name %></h5>
+                <p class="card-text"><strong>Code:</strong> <%= listing.code %></p>
+                <p class="card-text"><strong>Exam:</strong> <%= listing.exam %></p>
+                <p class="card-text"><strong>Location:</strong> <%= listing.location %></p>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</body>

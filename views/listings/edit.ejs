@@ -1,0 +1,135 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<body>
+    <div class="container mt-3">
+        <h2>Edit College Details</h2>
+
+        <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" class="row g-3 needs-validation" novalidate>
+
+            <!-- College Image -->
+            <div class="col-md-12">
+                <label class="form-label">College Image (URL)</label>
+                <input type="text" name="listing[image]" value="<%= listing.image %>" class="form-control" required>
+                <div class="invalid-feedback">Please enter the image link</div>
+            </div>
+
+            <!-- College Code -->
+            <div class="col-md-4">
+                <label class="form-label">College Code</label>
+                <input type="number" name="listing[code]" value="<%= listing.code %>" class="form-control" required>
+                <div class="invalid-feedback">Please enter the college code</div>
+            </div>
+
+            <!-- College Name -->
+            <div class="col-md-8">
+                <label class="form-label">College Name</label>
+                <input type="text" name="listing[name]" value="<%= listing.name %>" class="form-control" required>
+                <div class="invalid-feedback">Please enter the college name</div>
+            </div>
+
+            <!-- College Type -->
+            <div class="col-md-4">
+                <label class="form-label">College Type</label>
+                <input type="text" name="listing[type]" value="<%= listing.type %>" class="form-control" required>
+                <div class="invalid-feedback">Please enter the college type</div>
+            </div>
+
+            <!-- College Accreditation -->
+            <div class="col-md-4">
+                <label class="form-label">College Accreditation</label>
+                <input type="text" name="listing[accreditation]" value="<%= listing.accreditation %>" class="form-control" required>
+                <div class="invalid-feedback">Please enter the accreditation</div>
+            </div>
+
+            <!-- College Affiliation -->
+            <div class="col-md-4">
+                <label class="form-label">College Affiliation</label>
+                <input type="text" name="listing[affiliation]" value="<%= listing.affiliation %>" class="form-control" required>
+                <div class="invalid-feedback">Please enter the affiliation</div>
+            </div>
+
+            <!-- Established Year -->
+            <div class="col-md-4">
+                <label class="form-label">Established Year</label>
+                <input type="number" name="listing[establishedYear]" value="<%= listing.establishedYear %>" class="form-control" required>
+                <div class="invalid-feedback">Please enter the established year</div>
+            </div>
+
+            <!-- College Location -->
+            <div class="col-md-4">
+                <label class="form-label">Location</label>
+                <input type="text" name="listing[location]" value="<%= listing.location %>" class="form-control" required>
+                <div class="invalid-feedback">Please enter the college location</div>
+            </div>
+
+            <!-- College Location -->
+            <div class="col-md-4">
+                <label class="form-label">Exam Type</label>
+                <input type="text" name="listing[exam]" value="<%= listing.exam %>" class="form-control" required>
+                <div class="invalid-feedback">Please enter the exam types</div>
+            </div>
+
+            <!-- College Fees -->
+            <div class="col-md-4">
+                <label class="form-label">College Fees (INR)</label>
+                <input type="number" name="listing[fees]" value="<%= listing.fees %>" class="form-control" required>
+                <div class="invalid-feedback">Please enter the college fees</div>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="col-md-4">
+                <label class="form-label">Contact Number</label>
+                <input type="number" name="listing[phoneNumber]" value="<%= listing.phoneNumber %>" class="form-control" required>
+                <div class="invalid-feedback">Please enter the contact number</div>
+            </div>
+
+            <!-- College Email -->
+            <div class="col-md-4">
+                <label class="form-label">Email</label>
+                <input type="email" name="listing[email]" value="<%= listing.email %>" class="form-control" required>
+                <div class="invalid-feedback">Please enter the email</div>
+            </div>
+
+            <!-- College Website -->
+            <div class="col-md-4">
+                <label class="form-label">Website</label>
+                <input type="url" name="listing[website]" value="<%= listing.website %>" class="form-control" required>
+                <div class="invalid-feedback">Please enter the website URL</div>
+            </div>
+
+            <!-- Placement Rate -->
+            <div class="col-md-4">
+                <label class="form-label">Placement Rate (%)</label>
+                <input type="number" step="0.1" name="listing[placementRate]" value="<%= listing.placementRate %>" class="form-control" required>
+                <div class="invalid-feedback">Please enter the placement rate</div>
+            </div>
+
+            <!-- Cutoff -->
+            <div class="col-md-4">
+                <label class="form-label">Cutoff</label>
+                <input type="number" step="0.1" name="listing[cutoff]" value="<%= listing.cutoff %>" class="form-control" required>
+                <div class="invalid-feedback">Please enter the cutoff</div>
+            </div>
+
+            <!-- College Description -->
+            <div class="col-md-12">
+                <label class="form-label">College Description</label>
+                <textarea name="listing[description]" class="form-control" rows="5" required><%= listing.description %></textarea>
+                <div class="invalid-feedback">Please write the detailed description</div>
+            </div>
+
+            <!-- Rating -->
+            <div class="col-md-4">
+                <label class="form-label">Rating (out of 5)</label>
+                <input type="number" step="0.1" name="listing[rating]" value="<%= listing.rating %>" class="form-control" required>
+                <div class="invalid-feedback">Please enter the rating</div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Update College</button>
+            </div>
+
+        </form>
+    </div>
+</body>

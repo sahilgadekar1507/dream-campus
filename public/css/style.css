@@ -1,0 +1,42 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+}
+.content {
+    flex: 1; /* Pushes footer down */
+}
+
+.content {
+    flex: 1;
+}
+
+/* Navbar */
+.navbar {
+    backdrop-filter: blur(10px);
+}
+
+.name {
+    color: #2e2e2e;
+}
+
+/* Footer */
+.footer a:hover {
+    color: #f39c12; /* Changes color on hover */
+}
+
+/* Show Path */
+ul li {
+    list-style: none;
+}
+
+.show-image {
+    width: 90%;
+    height: 250px;
+    border-radius: 15px;
+}
+

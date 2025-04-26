@@ -1,0 +1,22 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<div class="row justify-content-center">
+  <div class="alert alert-danger col-md-6" role="alert">
+    <h5 class="mb-2">Error:</h5>
+    <p><%= message %></p>
+
+    <% if (details) { %>
+      <hr>
+      <ul class="mb-0">
+        <% details.forEach(detail => { %>
+          <li><%= detail.message %></li>
+        <% }) %>
+      </ul>
+    <% } %>
+
+    <% if (stack) { %>
+      <hr>
+      <pre class="bg-light p-2 rounded"><%= stack %></pre>
+    <% } %>
+  </div>
+</div>
