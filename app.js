@@ -66,7 +66,7 @@ app.use((req, res, next) => {
 
 // Home route (optional landing page)
 app.get("/", (req, res) => {
-  res.send("Home Page");
+  res.render("listings/home");
 });
 
 // Routes
