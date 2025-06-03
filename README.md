@@ -1,0 +1,1 @@
+This is the simple project where student can find the colleges and the admin have access to add college where students can't do any changes like adding review without SignUp/Login. I used ExpressJS, MongoDB and Frontend like HTML and CSS.
